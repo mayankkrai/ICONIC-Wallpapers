@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#382532">
+  <title>Choose Your Wallpaper Size | Iconic Wallpapers</title>
+  <meta name="description" content="Choose a wallpaper style, enter your wall width and height, and prepare an order for Iconic Wallpapers in Noida.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ordering.css">
+  <script src="script.js" defer></script>
+  <script src="ordering.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="location-bar"><a href="index.html#visit">Wallpaper showroom in Sector 137, Noida</a></div>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Iconic Wallpapers home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">Iconic <span>Wallpapers</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navigation"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="index.html#styles">Wallpaper styles</a>
+        <a href="index.html#planning">Plan your wall</a>
+        <a href="index.html#visit">Visit us</a>
+      </nav>
+      <a class="button button-outline header-order" href="order.html">View order<span class="order-count" data-order-count></span></a>
+    </div>
+  </header>
+
+  <main id="main" class="order-main" data-page="sizing">
+    <div class="shell order-heading">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Wallpaper sizing</span>
+      </nav>
+      <h1>Size your wallpaper.</h1>
+      <p>Choose a style and enter the full width and height of your wall. Wallpaper is ₹75 per sq ft.</p>
+    </div>
+    <div class="shell sizing-grid">
+      <figure class="order-image">
+        <img id="style-image" src="assets/tropical.webp" alt="Oversized green palm leaves on wallpaper behind a green velvet chair" width="540" height="660">
+        <figcaption><strong id="style-caption">Botanical</strong><span>Illustrative room scene</span></figcaption>
+      </figure>
+
+      <div>
+        <noscript><p class="order-panel">Turn on JavaScript to use the wall calculator and send an order request. You can also <a href="tel:+919266845485">call the showroom</a>.</p></noscript>
+        <form id="sizing-form" class="order-panel" hidden>
+          <div class="form-field">
+            <label for="wall-style">Wallpaper style</label>
+            <select id="wall-style" name="style" required>
+              <option value="botanical">Botanical</option>
+              <option value="floral">Floral</option>
+              <option value="texture">Textured</option>
+              <option value="geometric">Geometric</option>
+            </select>
+          </div>
+          <fieldset class="measure-fields">
+            <legend>Wall dimensions</legend>
+            <div class="form-field unit-field">
+              <label for="wall-unit">Measurement unit</label>
+              <select id="wall-unit" name="unit" required>
+                <option value="ft">Feet</option>
+                <option value="in">Inches</option>
+                <option value="cm">Centimetres</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="wall-width">Width <span data-unit-label>(ft)</span></label>
+                <input id="wall-width" name="width" type="number" min="0" step="any" inputmode="decimal" required>
+              </div>
+              <div class="form-field">
+                <label for="wall-height">Height <span data-unit-label>(ft)</span></label>
+                <input id="wall-height" name="height" type="number" min="0" step="any" inputmode="decimal" required>
+              </div>
+            </div>
+            <details class="measuring-help">
+              <summary>How should I measure?</summary>
+              <p>Measure the width at the top, middle and bottom. Measure from the skirting to the ceiling at the left, centre and right. Use the largest width and height, and mention any windows or doors in your order notes.</p>
+            </details>
+          </fieldset>
+          <div class="form-row sizing-options">
+            <div class="form-field">
+              <label for="wall-finish">Finish preference <span>(optional)</span></label>
+              <input id="wall-finish" name="finish" type="text" maxlength="60" placeholder="e.g. matte or woven">
+            </div>
+            <div class="form-field">
+              <label for="wall-quantity">Identical walls</label>
+              <input id="wall-quantity" name="quantity" type="number" min="1" max="99" step="1" inputmode="numeric" value="1" required>
+            </div>
+          </div>
+          <div class="area-card" aria-live="polite">
+            <div><span class="summary-label">Total wall area</span><output id="wall-area" for="wall-width wall-height wall-quantity">—</output></div>
+            <div><span class="summary-label">Wallpaper estimate</span><output id="wall-price" for="wall-width wall-height wall-quantity">—</output></div>
+          </div>
+          <p class="order-muted">The estimate uses your measured area. The showroom confirms the final total.</p>
+          <button class="button button-dark order-primary" type="submit" id="add-wall">Add wall to order</button>
+          <p class="form-alert" id="sizing-error" role="alert" hidden></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="index.html" aria-label="Iconic Wallpapers home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">Iconic <span>Wallpapers</span></span>
+      </a>
+      <a class="footer-visit" href="index.html#visit">Sector 137, Noida</a>
+      <a href="tel:+919266845485">+91 92668 45485</a>
+    </div>
+  </footer>
+</body>
+</html>

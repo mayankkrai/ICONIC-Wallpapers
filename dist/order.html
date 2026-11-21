@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#382532">
+  <title>Review Your Wallpaper Order | Iconic Wallpapers</title>
+  <meta name="description" content="Review wall sizes and send your wallpaper order request to the Iconic Wallpapers showroom in Noida.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ordering.css">
+  <script src="script.js" defer></script>
+  <script src="ordering.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="location-bar"><a href="index.html#visit">Wallpaper showroom in Sector 137, Noida</a></div>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Iconic Wallpapers home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">Iconic <span>Wallpapers</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navigation"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="index.html#styles">Wallpaper styles</a>
+        <a href="index.html#planning">Plan your wall</a>
+        <a href="index.html#visit">Visit us</a>
+      </nav>
+      <a class="button button-outline header-order" href="order.html" aria-current="page">View order<span class="order-count" data-order-count></span></a>
+    </div>
+  </header>
+
+  <main id="main" class="order-main" data-page="order">
+    <div class="shell order-heading">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">/</span>
+        <a href="wallpaper.html">Wallpaper sizing</a><span aria-hidden="true">/</span>
+        <span aria-current="page">Your order</span>
+      </nav>
+      <h1>Review your order.</h1>
+      <p>Check your selections, then send them to the Iconic Wallpapers showroom.</p>
+    </div>
+    <div class="shell">
+      <noscript><p class="order-panel">Turn on JavaScript to review your order. You can also <a href="tel:+919266845485">call the showroom</a>.</p></noscript>
+      <section class="order-panel order-empty" id="order-empty" hidden>
+        <h2>Your order is empty.</h2>
+        <p>Start by choosing a wallpaper style and entering your wall size.</p>
+        <a class="button button-dark" href="wallpaper.html">Size your wallpaper</a>
+      </section>
+      <div class="review-grid" id="order-review" hidden>
+        <section class="order-panel" aria-labelledby="walls-title">
+          <div class="review-panel-heading">
+            <h2 id="walls-title">Your walls</h2>
+            <a class="text-link" href="wallpaper.html">Add another wall</a>
+          </div>
+          <ul id="order-lines" class="order-lines"></ul>
+          <template id="order-line-template">
+            <li class="order-line">
+              <img alt="" width="540" height="660">
+              <div>
+                <h3></h3>
+                <p class="line-measure"></p>
+                <p class="line-finish" hidden></p>
+                <div class="line-actions">
+                  <a class="text-link">Edit</a>
+                  <button class="text-link" type="button">Remove</button>
+                </div>
+              </div>
+            </li>
+          </template>
+          <p class="form-alert" id="basket-error" role="alert" hidden></p>
+          <div class="area-card" aria-live="polite">
+            <div><span class="summary-label">Combined wall area</span><output id="order-area"></output></div>
+            <div><span class="summary-label">Wallpaper estimate</span><output id="order-price"></output></div>
+          </div>
+        </section>
+        <section class="order-panel" aria-labelledby="details-title">
+          <h2 id="details-title">Send your request</h2>
+          <p class="order-muted">Send your request on WhatsApp. The showroom will confirm the details and final total before you pay.</p>
+          <form id="request-form">
+            <div class="form-field">
+              <label for="customer-name">Your name</label>
+              <input id="customer-name" type="text" name="customer" autocomplete="name" maxlength="70" required>
+            </div>
+            <div class="form-field">
+              <label for="order-pin">Delivery PIN code <span>(optional)</span></label>
+              <input id="order-pin" type="text" name="pin" autocomplete="postal-code" inputmode="numeric" pattern="[1-9][0-9]{5}" maxlength="6" title="Enter a six-digit Indian PIN code">
+            </div>
+            <div class="form-field">
+              <label for="order-notes">Notes for the showroom <span>(optional)</span></label>
+              <textarea id="order-notes" name="notes" rows="3" maxlength="300" placeholder="e.g. a window on the left, or a colour you want to match"></textarea>
+            </div>
+            <button class="button button-dark order-primary" type="submit">Prepare order request</button>
+          </form>
+          <section class="message-review" id="message-review" aria-labelledby="message-title" hidden>
+            <h3 id="message-title" tabindex="-1">Your message</h3>
+            <label class="visually-hidden" for="order-message">Order request message</label>
+            <textarea id="order-message" readonly rows="8"></textarea>
+            <p class="order-muted">Open WhatsApp, then tap Send to submit this request to Iconic Wallpapers.</p>
+            <div class="actions">
+              <a class="button button-dark" id="send-order" rel="noopener noreferrer" target="_blank">Open WhatsApp</a>
+              <button class="button button-outline" type="button" id="copy-order">Copy message</button>
+            </div>
+            <p id="copy-status" class="order-muted" role="status"></p>
+          </section>
+        </section>
+      </div>
+      <p class="order-contact">Need help with your order? <a href="tel:+919266845485">Call +91 92668 45485</a>.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="index.html" aria-label="Iconic Wallpapers home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">Iconic <span>Wallpapers</span></span>
+      </a>
+      <a class="footer-visit" href="index.html#visit">Sector 137, Noida</a>
+      <a href="tel:+919266845485">+91 92668 45485</a>
+    </div>
+  </footer>
+</body>
+</html>
